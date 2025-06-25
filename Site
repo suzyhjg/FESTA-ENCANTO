@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTA & ENCANTO - Artigos para Festas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-pink-500 text-white p-4 text-center text-2xl font-bold">
+        FESTA & ENCANTO
+    </header>
+
+    <!-- Banner -->
+    <section class="hero-section h-64 flex items-center justify-center text-white text-4xl font-extrabold">
+        Transforme sua Festa em um Encanto!
+    </section>
+
+    <!-- Produtos -->
+    <section class="p-6">
+        <h2 class="text-3xl font-bold mb-4 text-center">Nossos Produtos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Produto 1 -->
+            <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+                <img src="https://via.placeholder.com/300" alt="Produto 1" class="w-full h-48 object-cover rounded mb-2">
+                <h3 class="font-bold text-lg">Balões Decorativos</h3>
+                <p class="text-gray-600">Balões coloridos para deixar sua festa mais alegre.</p>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+                <img src="https://via.placeholder.com/300" alt="Produto 2" class="w-full h-48 object-cover rounded mb-2">
+                <h3 class="font-bold text-lg">Toalhas Temáticas</h3>
+                <p class="text-gray-600">Toalhas decorativas para festas temáticas incríveis.</p>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+                <img src="https://via.placeholder.com/300" alt="Produto 3" class="w-full h-48 object-cover rounded mb-2">
+                <h3 class="font-bold text-lg">Copos Personalizados</h3>
+                <p class="text-gray-600">Copos personalizados para tornar seu evento único.</
