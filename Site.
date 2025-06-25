@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTA & ENCANTO - Artigos para Festas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .occasion-tab.active {
+            background-color: #f43f5e;
+            color: white;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+        }
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511999999999" class="floating-button bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl hover:bg-green-600 transition-all">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">F&E</div>
+                <h1 class="text-2xl font-bold text-pink-600">FESTA & ENCANTO</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-pink-600 font-medium">Início</a>
+                <a href="#products" class="text-gray-700 hover:text-pink-600 font-medium">Produtos</a>
+                <a href="#occasions" class="text-gray-700 hover:text-pink-600 font-medium">Ocasiões</a>
+                <a href="#about" class="text-gray-700 hover:text-pink-600 font-medium">Sobre Nós</a>
+                <a href="#contact" class="text-gray-700 hover:text-pink-600 font-medium">Contato</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-700 hover:text-pink-600">
+                    <i class="fas fa-search text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-pink-600 relative">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                </a>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-pink-600">Início</a>
+            <a href="#products" class="block py-2 text-gray-700 hover:text-pink-600">Produtos</a>
+            <a href="#occasions" class="block py-2 text-gray-700 hover:text-pink-600">Ocasiões</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-pink-600">Sobre Nós</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-pink-600">Contato</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Torne sua festa inesquecível</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Tudo o que você precisa para celebrar com estilo e encanto</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all inline-block">
+                    Ver Produtos
+                </a>
+                <a href="#occasions" class="bg-white hover:bg-gray-100 text-pink-600 font-bold py-3 px-8 rounded-full text-lg transition-all inline-block">
+                    Por Ocasião
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Nossos Produtos em Destaque</h2>
+                <div class="flex space-x-2">
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-2 rounded-full">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 p-2 rounded-full">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3" alt="Kit Festa Infantil" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="absolute top-2 right-2 bg-pink-500 text-white text-xs font-bold px-2 py-1 rounded">-15%</div>
+                        <button class="absolute top-2 left-2 bg-white text-pink-600 p-2 rounded-full hover:bg-pink-100">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Kit Festa Infantil</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(48)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-pink-600 text-lg">R$ 89,90</span>
+                            <span class="text-gray-400 text-sm line-through">R$ 105,90</span>
+                        </div>
+                        <button class="mt-4 w-full bg-pink-100 hover:bg-pink-200 text-pink-600 font-medium py-2 px-4 rounded transition-all flex items-center justify-center">
+                            <i class="fas fa-shopping-cart mr-2"></i> Adicionar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3" alt="Bolo Decorado" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        <button class="absolute top-2 left-2 bg-white text-pink-600 p-2 rounded-full hover:bg-pink-100">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Bolo Decorado</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(32)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-pink-600 text-lg">A partir de R$ 120,00</span>
+                        </div>
+                        <button class="mt-4 w-full bg-pink-100 hover:bg-pink-200 text-pink-600 font-medium py-2 px-4 rounded transition-all flex items-center justify-center">
+                            <i class="fas fa-pencil-alt mr-2"></i> Personalizar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3" alt="Kit Aniversário Adulto" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="absolute top-2 right-2 bg-pink-500 text-white text-xs font-bold px-2 py-1 rounded">Novo</div>
+                        <button class="absolute top-2 left-2 bg-white text-pink-600 p-2 rounded-full hover:bg-pink-100">
+                            <i class="fas fa-heart text-pink-600"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Kit Aniversário Adulto</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(18)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-pink-600 text-lg">R$ 149,90</span>
+                        </div>
+                        <button class="mt-4 w-full bg-pink-100 hover:bg-pink-200 text-pink-600 font-medium py-2 px-4 rounded transition-all flex items-center justify-center">
+                            <i class="fas fa-shopping-cart mr-2"></i> Adicionar
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300">
+                    <div class="relative overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1606983348281-165afe7a8a79?ixlib=rb-4.0.3" alt="Kit Casamento" class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        <button class="absolute top-2 left-2 bg-white text-pink-600 p-2 rounded-full hover:bg-pink-100">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2 text-gray-800">Kit Casamento Premium</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="text-yellow-400 mr-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(27)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-pink-600 text-lg">R$ 399,90</span>
+                        </div>
+                        <button class="mt-4 w-full bg-pink-100 hover:bg-pink-200 text-pink-600 font-medium py-2 px-4 rounded transition-all flex items-center justify-center">
+                            <i class="fas fa-file-alt mr-2"></i> Orçamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-pink-600 text-pink-600 font-bold py-3 px-8 rounded-full hover:bg-pink-600 hover:text-white transition-all flex items-center mx-auto w-fit">
+                    <span>Ver Todos os Produtos</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Occasions Section -->
+    <section id="occasions" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Produtos por Ocasião</h2>
+            
+            <!-- Occasion Tabs -->
+            <div class="flex overflow-x-auto pb-2 mb-8 scrollbar-hide">
+                <button class="occasion-tab active px-6 py-2 rounded-full font-medium whitespace-nowrap mr-3" data-occasion="aniversario">Aniversário</button>
+                <button class="occasion-tab px-6 py-2 rounded-full font-medium whitespace-nowrap mr-3" data-occasion="casamento">Casamento</button>
+                <button class="occasion-tab px-6 py-2 rounded-full font-medium whitespace-nowrap mr-3" data-occasion="infantil">Infantil</button>
+                <button class="occasion-tab px-6 py-2 rounded-full font-medium whitespace-nowrap mr-3" data-occasion="formatura">Formatura</button>
+                <button class="occasion-tab px-6 py-2 rounded-full font-medium whitespace-nowrap mr-3" data-occasion="corporativo">Eventos Corporativos</button>
+                <button class="occasion-tab px-6 py-2 rounded-full font-medium whitespace-nowrap" data-occasion="tematicas">Festas Temáticas</button>
+            </div>
+            
+            <!-- Occasion Content -->
+            <div class="occasion-content">
+                <!-- Aniversário -->
+                <div id="aniversario" class="occasion-panel active">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 text-pink-600">Produtos para Aniversário</h3>
+                            <p class="text-gray-700 mb-6">Celebre mais um ano de vida com nossos kits completos para festas de aniversário. Temos opções para todas as idades e estilos, desde os clássicos até os mais modernos.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Kits completos</span> - Tudo o que você precisa em um só lugar</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Decoração premium</span> - Itens de alta qualidade para impressionar</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Personalização</span> - Crie um tema único para sua festa</p>
+                                </div>
+                            </div>
+                            <a href="#" class="mt-6 inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded transition-all">
+                                Ver Produtos para Aniversário
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3" alt="Aniversário" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1542838134-5a824518b9cb?ixlib=rb-4.0.3" alt="Aniversário" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3" alt="Aniversário" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3" alt="Aniversário" class="rounded-lg h-48 w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Casamento -->
+                <div id="casamento" class="occasion-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 text-pink-600">Produtos para Casamento</h3>
+                            <p class="text-gray-700 mb-6">Torne seu grande dia ainda mais especial com nossos produtos premium para casamentos. Desde os convites até os detalhes finais da decoração, temos tudo para criar a atmosfera perfeita.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Linha Premium</span> - Materiais de alta qualidade para seu casamento</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Personalização total</span> - Crie um tema único para seu casamento</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Assessoria completa</span> - Nossos especialistas ajudam no planejamento</p>
+                                </div>
+                            </div>
+                            <a href="#" class="mt-6 inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded transition-all">
+                                Ver Produtos para Casamento
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3" alt="Casamento" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3" alt="Casamento" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fe31e9?ixlib=rb-4.0.3" alt="Casamento" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3" alt="Casamento" class="rounded-lg h-48 w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infantil -->
+                <div id="infantil" class="occasion-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 text-pink-600">Produtos para Festas Infantis</h3>
+                            <p class="text-gray-700 mb-6">Encante as crianças com nossos kits coloridos e divertidos para festas infantis. Temos opções com os personagens mais queridos e temas incríveis para tornar a festa inesquecível.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Temas populares</span> - Personagens e temas que as crianças amam</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Kits econômicos</span> - Festa completa sem gastar muito</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Brindes e lembrancinhas</span> - Opções criativas para presentear os convidados</p>
+                                </div>
+                            </div>
+                            <a href="#" class="mt-6 inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded transition-all">
+                                Ver Produtos Infantis
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1578898887932-d4c2dc0f9804?ixlib=rb-4.0.3" alt="Infantil" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1556909211-d5b604d0c90d?ixlib=rb-4.0.3" alt="Infantil" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1560964645-5296b50974d0?ixlib=rb-4.0.3" alt="Infantil" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?ixlib=rb-4.0.3" alt="Infantil" class="rounded-lg h-48 w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formatura -->
+                <div id="formatura" class="occasion-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 text-pink-600">Produtos para Formatura</h3>
+                            <p class="text-gray-700 mb-6">Celebre essa conquista importante com produtos exclusivos para formaturas. Desde convites elegantes até decoração sofisticada para sua festa de formatura.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Linha Elegante</span> - Produtos sofisticados para sua formatura</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Convites personalizados</span> - Crie convites únicos para seu evento</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Lembranças especiais</span> - Presentes memoráveis para os formandos</p>
+                                </div>
+                            </div>
+                            <a href="#" class="mt-6 inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded transition-all">
+                                Ver Produtos para Formatura
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3" alt="Formatura" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3" alt="Formatura" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3" alt="Formatura" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-4.0.3" alt="Formatura" class="rounded-lg h-48 w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Corporativo -->
+                <div id="corporativo" class="occasion-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 text-pink-600">Produtos para Eventos Corporativos</h3>
+                            <p class="text-gray-700 mb-6">Produtos profissionais e elegantes para seus eventos corporativos, desde confraternizações até convenções e lançamentos.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Linha Profissional</span> - Produtos que transmitem credibilidade</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Personalização com logo</span> - Itens personalizados com sua marca</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Kits para presentes</span> - Opções elegantes para presentear clientes</p>
+                                </div>
+                            </div>
+                            <a href="#" class="mt-6 inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded transition-all">
+                                Ver Produtos Corporativos
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3" alt="Corporativo" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3" alt="Corporativo" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3" alt="Corporativo" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3" alt="Corporativo" class="rounded-lg h-48 w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Temáticas -->
+                <div id="tematicas" class="occasion-panel hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4 text-pink-600">Festas Temáticas</h3>
+                            <p class="text-gray-700 mb-6">Explore nossos kits completos para festas temáticas incríveis. Desde super-heróis até festas à fantasia, temos tudo para criar uma experiência memorável.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Temas variados</span> - De super-heróis a festas à fantasia</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Kits completos</span> - Tudo o que você precisa para seu tema</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                        <i class="fas fa-check text-pink-600"></i>
+                                    </div>
+                                    <p class="text-gray-700"><span class="font-bold">Decoração exclusiva</span> - Itens que você não encontra em outros lugares</p>
+                                </div>
+                            </div>
+                            <a href="#" class="mt-6 inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-6 rounded transition-all">
+                                Ver Temas Disponíveis
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?ixlib=rb-4.0.3" alt="Temáticas" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1556909211-d5b604d0c90d?ixlib=rb-4.0.3" alt="Temáticas" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3" alt="Temáticas" class="rounded-lg h-48 w-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3" alt="Temáticas" class="rounded-lg h-48 w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Sobre a FESTA & ENCANTO</h2>
+                    <p class="text-gray-700 mb-4">Há mais de 10 anos no mercado, a FESTA & ENCANTO se dedica a fornecer os melhores produtos para festas e celebrações. Nossa missão é ajudar você a criar momentos inesquecíveis com produtos de alta qualidade e designs encantadores.</p>
+                    <p class="text-gray-700 mb-6">Nossa equipe de designers e especialistas em festas está sempre atualizada com as últimas tendências para oferecer produtos inovadores que impressionam.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="text-pink-600 text-3xl mb-2">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Qualidade Garantida</h4>
+                            <p class="text-sm text-gray-600">Produtos testados e aprovados por nossos clientes</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="text-pink-600 text-3xl mb-2">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Entrega Rápida</h4>
+                            <p class="text-sm text-gray-600">Entregamos em todo o Brasil em até 5 dias úteis</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="text-pink-600 text-3xl mb-2">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Atendimento Personalizado</h4>
+                            <p class="text-sm text-gray-600">Nossa equipe está pronta para ajudar no que precisar</p>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-lg">
+                            <div class="text-pink-600 text-3xl mb-2">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4 class="font-bold mb-1">Design Exclusivo</h4>
+                            <p class="text-sm text-gray-600">Produtos únicos criados por nossa equipe de designers</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded transition-all">
+                        Fale Conosco
+                    </a>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3" alt="Sobre Nós" class="rounded-lg w-full h-auto shadow-lg">
+                    <div class="absolute -bottom-6 -left-6 bg-pink-600 text-white p-6 rounded-lg shadow-lg hidden lg:block">
+                        <h3 class="font-bold text-xl mb-2">10+ anos</h3>
+                        <p class="text-sm">Criando momentos especiais</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">O que nossos clientes dizem</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Comprei o kit para festa infantil da minha filha e amei! A qualidade dos produtos é excelente e tudo chegou perfeitamente embalado. Super recomendo!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Cliente" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold">Ana Carolina</h4>
+                            <p class="text-gray-500 text-sm">Mãe da Julia</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"O kit casamento premium foi perfeito para nosso grande dia. A equipe ajudou em tudo e os produtos eram exatamente como nas fotos. Valeu cada centavo!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold">Ricardo Almeida</h4>
+                            <p class="text-gray-500 text-sm">Noivo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Sempre compro os produtos para eventos corporativos aqui. A qualidade é excelente e o atendimento é muito profissional. Já recomendei para várias empresas."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cliente" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold">Patrícia Oliveira</h4>
+                            <p class="text-gray-500 text-sm">Gerente de Eventos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Entre em Contato</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-pink-600">Nossas Informações</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-map-marker-alt text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Endereço</h4>
+                                <p class="text-gray-700">Rua das Festas, 123 - Centro</p>
+                                <p class="text-gray-700">São Paulo - SP</p>
+                                <p class="text-gray-700">CEP: 01234-567</p>
+                            </div>
+                        </div>
+                                                
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-phone-alt text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Telefone</h4>
+                                <p class="text-gray-700">(11) 9999-9999</p>
+                                <p class="text-gray-700">WhatsApp: (11) 99999-9999</p>
+                            </div>
+                        </div>
+                                                
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-envelope text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">E-mail</h4>
+                                <p class="text-gray-700">contato@festaencanto.com.br</p>
+                                <p class="text-gray-700">vendas@festaencanto.com.br</p>
+                            </div>
+                        </div>
+                                                
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 rounded-full p-3 mr-4">
+                                <i class="fas fa-clock text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Horário de Funcionamento</h4>
+                                <p class="text-gray-700">Segunda a Sexta: 9h às 18h</p>
+                                <p class="text-gray-700">Sábado: 9h às 13h</p>
+                                <p class="text-gray-700">Domingo: Fechado</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Siga-nos nas redes sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-pink-700 transition-all">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-pink-600">Envie sua Mensagem</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-1">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                                                
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-1">E-mail</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                                                
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-1">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                                                
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-1">Assunto</label>
+                            <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                <option value="">Selecione um assunto</option>
+                                <option value="orcamento">Solicitar Orçamento</option>
+                                <option value="duvida">Tirar Dúvidas</option>
+                                <option value="reclamacao">Reclamação</option>
+                                <option value="elogio">Elogio</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                                                
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-1">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea>
+                        </div>
+                                                
+                        <button type="submit" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-4 rounded transition-all">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-pink-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4">Assine nossa Newsletter</h2>
+            <p class="mb-6 max-w-2xl mx-auto">Receba promoções exclusivas, novidades e dicas para suas festas diretamente no seu e-mail.</p>
+            
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Seu melhor e-mail" class="flex-grow px-4 py-3 rounded-l focus:outline-none text-gray-800">
+                <button type="submit" class="bg-pink-800 hover:bg-pink-900 px-6 py-3 rounded-r font-medium transition-all">
+                    Assinar
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">F&E</div>
+                        <h3 class="text-xl font-bold">FESTA & ENCANTO</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Tudo o que você precisa para celebrar com estilo e encanto.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Minha Conta</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Meus Pedidos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Rastrear Pedido</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Atendimento</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">(11) 9999-9999</li>
+                        <li class="text-gray-400">contato@festaencanto.com.br</li>
+                        <li class="text-gray-400">Segunda a Sexta: 9h às 18h</li>
+                        <li class="text-gray-400">Sábado: 9h às 13h</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Formas de Pagamento</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="bg-white p-2 rounded flex items-center justify-center">
+                            <img src="https://logodownload.org/wp-content/uploads/2014/04/visa-logo-1.png" alt="Visa" class="h-6">
+                        </div>
+                        <div class="bg-white p-2 rounded flex items-center justify-center">
+                            <img src="https://logodownload.org/wp-content/uploads/2014/04/mastercard-logo.png" alt="Mastercard" class="h-6">
+                        </div>
+                        <div class="bg-white p-2 rounded flex items-center justify-center">
+                            <img src="https://logodownload.org/wp-content/uploads/2017/04/amex-logo-1.png" alt="American Express" class="h-6">
+                        </div>
+                        <div class="bg-white p-2 rounded flex items-center justify-center">
+                            <img src="https://logodownload.org/wp-content/uploads/2017/04/hipercard-logo.png" alt="Hipercard" class="h-6">
+                        </div>
+                        <div class="bg-white p-2 rounded flex items-center justify-center">
+                            <img src="https://logodownload.org/wp-content/uploads/2019/02/elo-logo-1.png" alt="Elo" class="h-6">
+                        </div>
+                        <div class="bg-white p-2 rounded flex items-center justify-center">
+                            <img src="https://logodownload.org/wp-content/uploads/2019/02/boleto-logo.png" alt="Boleto" class="h-6">
+                        </div>
+                        <div class="bg-white p-2 rounded flex items-center justify-center">
+                            <img src="https://logodownload.org/wp-content/uploads/2020/04/pix-logo-banco-central.png" alt="Pix" class="h-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 FESTA & ENCANTO. Todos os direitos reservados.</p>
+                <p class="mt-2">CNPJ: 12.345.678/0001-99</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Occasion tabs functionality
+        const occasionTabs = document.querySelectorAll('.occasion-tab');
+        const occasionPanels = document.querySelectorAll('.occasion-panel');
+
+        occasionTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                occasionTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                this.classList.add('active');
+
+                // Hide all panels
+                occasionPanels.forEach(panel => panel.classList.add('hidden'));
+                // Show the selected panel
+                const panelId = this.getAttribute('data-occasion');
+                document.getElementById(panelId).classList.remove('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Form submission (example)
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+                this.reset();
+            });
+        }
+
+        // Newsletter form submission (example)
+        const newsletterForm = document.querySelector('.bg-pink-600 form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Obrigado por assinar nossa newsletter!');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
